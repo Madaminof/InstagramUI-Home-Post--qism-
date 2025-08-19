@@ -1,4 +1,4 @@
-package com.example.instagramprofile.Header
+package com.example.instagramprofile.Components.Header
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -15,9 +15,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.shape.CircleShape
+import androidx.navigation.NavController
+import com.example.instagramprofile.Navigation.Routes
 
 @Composable
-fun Header() {
+fun Header(
+    navController: NavController
+) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -55,7 +59,7 @@ fun Header() {
                 modifier = Modifier
                     .size(36.dp)
                     .clip(CircleShape)
-                    .clickable { /* Send bosilganda amal */ }
+                    .clickable { navController.navigate(Routes.CHATS) }
                     .padding(4.dp)
             )
         }

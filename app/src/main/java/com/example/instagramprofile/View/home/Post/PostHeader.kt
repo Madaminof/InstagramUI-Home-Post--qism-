@@ -1,4 +1,4 @@
-package com.example.instagramprofile.Post
+package com.example.instagramprofile.View.home.Post
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -25,11 +25,11 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-
+import coil.compose.rememberAsyncImagePainter
 
 @Composable
 fun PostHeader(
-    avatarRes: Int,
+    avatarRes: String, // URL
     username: String,
     onMoreClick: () -> Unit = {}
 ) {
@@ -42,7 +42,7 @@ fun PostHeader(
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Image(
-                painter = painterResource(id = avatarRes),
+                painter = rememberAsyncImagePainter(avatarRes), // URL bilan ishlash
                 contentDescription = "User Avatar",
                 modifier = Modifier
                     .size(40.dp)

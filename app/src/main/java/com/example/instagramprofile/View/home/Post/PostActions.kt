@@ -1,4 +1,4 @@
-package com.example.instagramprofile.Post
+package com.example.instagramprofile.View.home.Post
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -24,14 +24,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
+import com.example.instagramprofile.data.Post
+import androidx.compose.material.icons.filled.Loop
 
 
 @Composable
 fun PostActions(
-    likeCount: String,
-    commentCount: String,
-    shareCount: String,
-    isLiked: Boolean,
+    post: Post, // har bir postning holatini oladi
     onLikeClick: () -> Unit,
     onCommentClick: () -> Unit,
     onShareClick: () -> Unit
@@ -45,9 +44,9 @@ fun PostActions(
     ) {
         // ❤️ Like
         ActionItem(
-            icon = if (isLiked) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
-            tint = if (isLiked) Color.Red else MaterialTheme.colorScheme.onBackground,
-            count = likeCount,
+            icon = if (post.isLiked) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
+            tint = if (post.isLiked) Color.Red else MaterialTheme.colorScheme.onBackground,
+            count = post.likeCount.toString(),
             onClick = onLikeClick
         )
 
@@ -57,9 +56,10 @@ fun PostActions(
         ActionItem(
             icon = Icons.Default.Comment,
             tint = MaterialTheme.colorScheme.onBackground,
-            count = commentCount,
+            count = post.commentCount,
             onClick = onCommentClick
         )
+
 
         Spacer(modifier = Modifier.width(20.dp))
 
@@ -67,7 +67,7 @@ fun PostActions(
         ActionItem(
             icon = Icons.Default.Send,
             tint = MaterialTheme.colorScheme.onBackground,
-            count = shareCount,
+            count = post.shareCount,
             onClick = onShareClick
         )
     }

@@ -12,14 +12,18 @@ private val LightColorScheme = lightColorScheme(
     primary = Color(0xFFE1306C),
     secondary = Color(0xFF833AB4),
     background = Color.White,
-    onBackground = Color.Black
-)
+    onBackground = Color.Black,
+    surface = lightKulrang,
+
+    )
 
 private val DarkColorScheme = darkColorScheme(
     primary = Color(0xFFE1306C),
     secondary = Color(0xFF833AB4),
     background = Color.Black,
-    onBackground = Color.White
+    onBackground = Color.White,
+    surface = blackKulrang,        // Yengil qora-yashil
+
 )
 
 // 2️⃣ Tipografiya

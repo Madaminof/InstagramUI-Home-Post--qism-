@@ -1,4 +1,4 @@
-package com.example.instagramprofile.Post
+package com.example.instagramprofile.View.home.Post
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
